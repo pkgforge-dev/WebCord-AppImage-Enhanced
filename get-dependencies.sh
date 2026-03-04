@@ -6,20 +6,11 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm \
-	nspr           \
-	nss            \
-	pipewire-audio \
-    pipewire-jack
+pacman -Syu --noconfirm pipewire-audio pipewire-jack
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
-
-# Comment this out if you need an AUR package
-#make-aur-package
-
-# If the application needs to be manually built that has to be done down here
 
 echo "Getting app..."
 echo "---------------------------------------------------------------"
@@ -38,8 +29,6 @@ fi
 mkdir -p ./AppDir/bin
 ar xvf /tmp/app.deb
 tar -xvf ./data.tar.zst
-rm -f ./*.gz
+rm -f ./*.zst
 mv -v ./usr/lib/webcord/* ./AppDir/bin
-cp -v ./usr/share/applications/webcord.desktop ./AppDir
-cp -v ./usr/share/pixmaps/webcord.png ./AppDir/.DirIcon
-cp -v ./usr/share/pixmaps/webcord.png ./AppDir
+mv -v ./usr/share/applications/webcord.desktop ./AppDir
