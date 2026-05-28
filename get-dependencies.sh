@@ -38,7 +38,7 @@ fi
 mkdir -p ./AppDir/bin
 ar xvf /tmp/app.deb
 tar -xvf ./data.tar.zst
-rm -f ./*.gz
+rm -f ./*.zst
 mv -v ./usr/lib/webcord/* ./AppDir/bin
 cp -v ./usr/share/applications/webcord.desktop ./usr/share/pixmaps/webcord.png ./AppDir
 cp -v ./usr/share/pixmaps/webcord.png ./AppDir/.DirIcon
