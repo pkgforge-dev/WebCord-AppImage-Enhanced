@@ -7,6 +7,7 @@ export ARCH
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
+export ICON=https://raw.githubusercontent.com/SpacingBat3/WebCord/refs/heads/master/sources/assets/icons/app.png
 export STARTUPWMCLASS=WebCord
 export DEPLOY_PIPEWIRE=1
 export DEPLOY_OPENGL=1
